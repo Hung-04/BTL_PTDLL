@@ -352,24 +352,25 @@ Transmission_input = int(input("Nhập Transmission('Manual': 1, 'Automatic': 2)
 my_function(Year_input, Kilometers_Driven_input, Mileage_input, Seats_input, Engine_Number_input, Power_Number_input, Transmission_input)
 
 
-# # Test Ridge Regression
-# # Chia dữ liệu thành tập huấn luyện và tập kiểm tra
-# X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
-#
-# # Huấn luyện mô hình RandomForestRegressor
-# n_estimators_value = 100  # Số cây trong rừng, có thể điều chỉnh để tối ưu mô hình
-# model_2 = RandomForestRegressor(n_estimators=n_estimators_value, random_state=42)
-# model_2.fit(X_train, Y_train)
-#
-# # Lưu mô hình
-# # dump(model, 'random_forest_model.joblib')
-#
-# # Dự đoán trên tập kiểm tra và in ra các metric đánh giá
-# Y_pred = model_2.predict(X_test)
-# mae = mean_absolute_error(Y_test, Y_pred)
-# mse = mean_squared_error(Y_test, Y_pred)
-# r2 = r2_score(Y_test, Y_pred)
-#
-# print(f"Mean Absolute Error (MAE): {mae:.2f}")
-# print(f"Mean Squared Error (MSE): {mse:.2f}")
-# print(f"R^2 Score: {r2:.2f}")
+# Test Ridge Regression
+# Chia dữ liệu thành tập huấn luyện và tập kiểm tra
+X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size=0.2, random_state=42)
+
+# Huấn luyện mô hình RandomForestRegressor
+n_estimators_value = 100  # Số cây trong rừng, có thể điều chỉnh để tối ưu mô hình
+model_2 = RandomForestRegressor(n_estimators=n_estimators_value, random_state=42)
+model_2.fit(X_train, Y_train)
+
+# Lưu mô hình
+# dump(model, 'random_forest_model.joblib')
+
+# Dự đoán trên tập kiểm tra và in ra các metric đánh giá
+Y_pred = model_2.predict(X_test)
+mae = mean_absolute_error(Y_test, Y_pred)
+mse = mean_squared_error(Y_test, Y_pred)
+r2 = r2_score(Y_test, Y_pred)
+
+print('Sử dụng mô hình RandomForestRegressor')
+print(f"Mean Absolute Error (MAE): {mae:.2f}")
+print(f"Mean Squared Error (MSE): {mse:.2f}")
+print(f"R^2 Score: {r2:.2f}")
